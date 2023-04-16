@@ -12,6 +12,7 @@ import {ProductService} from '../../../../services/product/product.service';
 
 export class DigitalAddComponent implements OnInit {
   product: Product = new Product();
+  productName: string;
   public counter = 1;
   public Editor = ClassicEditor;
   constructor(private productService: ProductService) { }
