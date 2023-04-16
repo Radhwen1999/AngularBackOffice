@@ -43,20 +43,20 @@ export class NavService {
 		{
 			title: 'Products', icon: 'box', type: 'sub', active: false, children: [
 				{
-					title: 'Physical', type: 'sub', children: [
-						{ path: '/products/physical/category', title: 'Category', type: 'link' },
-						{ path: '/products/physical/sub-category', title: 'Sub Category', type: 'link' },
-						{ path: '/products/physical/product-list', title: 'Product List', type: 'link' },
-						{ path: '/products/physical/product-detail', title: 'Product Detail', type: 'link' },
-						{ path: '/products/physical/add-product', title: 'Add Product', type: 'link' },
+					title: 'Add Product', type: 'sub', children: [
+						{ path: '/products/digital/digital-add-product', title: 'Add Digital Products', type: 'link' },
+						{ path: '/products/physical/add-product', title: 'Add Clothing Products', type: 'link' },
 					]
 				},
 				{
-					title: 'digital', type: 'sub', children: [
-						{ path: '/products/digital/digital-category', title: 'Category', type: 'link' },
-						{ path: '/products/digital/digital-sub-category', title: 'Sub Category', type: 'link' },
-						{ path: '/products/digital/digital-product-list', title: 'Product List', type: 'link' },
-						{ path: '/products/digital/digital-add-product', title: 'Add Product', type: 'link' },
+					title: 'Consult Product', type: 'sub', children: [
+						{ path: '/products/physical/category', title: 'Clothing Products Brands', type: 'link' },
+						{ path: '/products/physical/sub-category', title: 'ClothingProducts Category', type: 'link' },
+						{ path: '/products/physical/product-list', title: 'Clothing Products List', type: 'link' },
+						{ path: '/products/physical/product-detail', title: 'Clothing Product Detail', type: 'link' },
+						{ path: '/products/digital/digital-category', title: 'Digital Product Category', type: 'link' },
+						{ path: '/products/digital/digital-product-list', title: 'Digital Products List', type: 'link' },
+
 					]
 				},
 			]

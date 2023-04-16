@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {Product} from '../../../../models/product';
+import {ProductService} from '../../../../services/product/product.service';
 
 @Component({
   selector: 'app-digital-add',
@@ -9,9 +11,10 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 export class DigitalAddComponent implements OnInit {
+  product: Product = new Product();
   public counter = 1;
   public Editor = ClassicEditor;
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   files: File[] = [];
 
@@ -31,8 +34,18 @@ export class DigitalAddComponent implements OnInit {
   decrement() {
     this.counter -= 1;
   }
-
-
+  onSubmit() {
+    this.productService.addProduct(this.product).subscribe(
+        (product: Product) => {
+          console.log('Product added successfully', product);
+          // Reset the form
+          this.product = new Product();
+        },
+        (error) => {
+          console.error('Failed to add product', error);
+        }
+    );
+  }
   ngOnInit() {
   }
 

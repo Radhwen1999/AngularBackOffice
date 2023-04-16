@@ -21,6 +21,9 @@ import { InvoiceModule } from './components/invoice/invoice.module';
 import { SettingModule } from './components/setting/setting.module';;
 import { ReportsModule } from './components/reports/reports.module';
 import { AuthModule } from './components/auth/auth.module';
+import {ProductService} from './services/product/product.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,9 +48,12 @@ import { AuthModule } from './components/auth/auth.module';
     MediaModule,
     MenusModule,
     UsersModule,
-    AgGridModule
+    AgGridModule,
+    FormsModule,
+    ReactiveFormsModule,
+      HttpClientModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

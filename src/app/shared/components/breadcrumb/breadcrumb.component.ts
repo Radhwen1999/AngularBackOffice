@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class BreadcrumbComponent implements OnInit {
 
   public breadcrumbs;
-  public title: string
+  public title: string;
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router) {
