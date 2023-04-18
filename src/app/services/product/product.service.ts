@@ -7,9 +7,10 @@ import {Product} from '../../models/product';
   providedIn: 'root'
 })
 export class ProductService {
-  readonly PRODUCT_API_URL = 'http://localhost:9092/COCO/api/product/addproduct';
+  readonly PRODUCT_API_URL = 'http://localhost:8089/radhwen/api/product/addproduct';
   constructor(private httpClient: HttpClient) { }
-  addProduct(product: Product): Observable<Product> {
-    return this.httpClient.post<Product>(this.PRODUCT_API_URL, product);
+  addProduct(product: Product): Observable<any> {
+    // return this.httpClient.post<Product>(this.PRODUCT_API_URL, product);
+    return this.httpClient.post(this.PRODUCT_API_URL, product);
   }
 }
