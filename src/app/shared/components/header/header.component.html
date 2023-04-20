@@ -117,7 +117,7 @@
                                 <app-feather-icons [icon]="'settings'"></app-feather-icons>Settings
                             </a></li>
                         <li>
-                            <a [routerLink]="'/auth/login'">
+                            <a (click)="logout()" [routerLink]="'/auth/login'">
                                 <app-feather-icons [icon]="'log-out'"></app-feather-icons>Logout
                             </a>
                         </li>
