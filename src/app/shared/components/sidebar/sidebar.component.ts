@@ -47,6 +47,10 @@ export class SidebarComponent {
       this.currentUser = data;
     });
   }
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnInit() {
+    console.log(this.currentUser.username);
+  }
 
   // Active Nave state
   setNavActive(item) {
