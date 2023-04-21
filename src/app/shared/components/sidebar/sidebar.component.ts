@@ -15,6 +15,7 @@ export class SidebarComponent {
   public menuItems: Menu[];
   public url: any;
   public fileurl: any;
+  isLoggedIn = false;
   // tslint:disable-next-line:new-parens
   currentUser: User = new User;
 
@@ -50,6 +51,9 @@ export class SidebarComponent {
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
     console.log(this.currentUser.username);
+    if (this.authService.isLoggedIn()) {
+      this.isLoggedIn = true;
+    }
   }
 
   // Active Nave state
