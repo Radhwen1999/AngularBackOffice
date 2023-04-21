@@ -74,8 +74,8 @@ export class LoginComponent implements OnInit {
     });
     if (this.authService.isLoggedIn()) {
       this.isLoggedIn = true;
-
     }
+    console.log('login page open');
   }
 
   onSubmit(): void {
@@ -91,7 +91,7 @@ export class LoginComponent implements OnInit {
         });
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.reloadPage();
+        /*this.reloadPage();*/
       },
       error: err => {
         this.isLoginFailed = true;

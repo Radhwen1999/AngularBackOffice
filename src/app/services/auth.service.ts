@@ -53,6 +53,7 @@ export class AuthService {
 
   login(username: string, password: string): Observable<any> {
     this.ar = {username, password};
+    console.log('login Service called');
     return this.http.post<any>(`${this.API_URL}webAuthenticate`, this.ar)
         .pipe(
             map(response => {
@@ -60,6 +61,10 @@ export class AuthService {
                     localStorage.setItem('currentUser', JSON.stringify(response.user));
                     localStorage.setItem('token', JSON.stringify(response.token));
                     this.currentUserSubject.next(response);
+                    console.log('login Service done successfully');
+                  }
+                  else {
+                    console.log('login Service failed');
                   }
                   return response;
                 }
