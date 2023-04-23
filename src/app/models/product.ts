@@ -1,10 +1,12 @@
+import {FileHandle} from './FileHandle';
+
 export class Product {
     productId: number;
     reference: string;
     productName: string;
     description: string;
     quantity: number;
-    images: File;
+    images: string;
     model: File;
     video: string;
     brand: string;
@@ -14,4 +16,6 @@ export class Product {
     yearsOfWarranty: number;
     createdAt: Date;
     productCategory: string;
+    productImages: FileHandle[];
+
 }
