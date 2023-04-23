@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import {ProductResolverService} from "../../services/product-resolver/product-resolver.service";
+import {ProviderResolverService} from "../../services/provider-resolver/provider-resolver.service";
 
 export const content: Routes = [
   {
@@ -35,6 +36,9 @@ export const content: Routes = [
     loadChildren: () => import('../../components/pages/pages.module').then(m => m.PagesModule),
     data: {
       breadcrumb: "Pages"
+    },
+    resolve: {
+      provider: ProviderResolverService
     }
   },
   {
