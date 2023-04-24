@@ -11,9 +11,6 @@ export const content: Routes = [
     loadChildren: () => import('../../components/products/products.module').then(m => m.ProductsModule),
     data: {
       breadcrumb: "Products",
-      resolve: {
-        product: ProductResolverService
-      }
     },
   },
   {
