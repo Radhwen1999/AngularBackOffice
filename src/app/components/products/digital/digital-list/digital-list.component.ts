@@ -17,6 +17,7 @@ import {
 import {ImageProcessingService} from "../../../../services/image-processing.service";
 import {map} from "rxjs/operators";
 import {Router} from "@angular/router";
+import {FileHandle} from "../../../../models/FileHandle";
 
 
 @Component({
@@ -28,12 +29,14 @@ import {Router} from "@angular/router";
 export class DigitalListComponent implements OnInit {
   tableItem$: Observable<DigitalListDB[]>;
   public digitalCategories: Product[] = [];
+  array: FileHandle[] = [];
 
   constructor(public service: TableService, private modalService: NgbModal, private productService: ProductService, private imagediag: MatDialog,
               private  imageProcessingService: ImageProcessingService, private route: Router ) {
   }
 
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
+  image: FileHandle;
 
   onSort({ column, direction }: SortEvent) {
     console.log("ddsds");

@@ -28,13 +28,18 @@ export class DigitalAddComponent implements OnInit {
       const file = event.addedFiles[0];
       const reader = new FileReader();
       reader.readAsDataURL(file);
+      const url = this.sanitizer.bypassSecurityTrustUrl(
+          window.URL.createObjectURL(file)).toString();
       const fileHandle: FileHandle = {
         filefile: file,
         url: this.sanitizer.bypassSecurityTrustUrl(
             window.URL.createObjectURL(file)
         ),
-        preview: reader.result as string
+        preview: this.sanitizer.bypassSecurityTrustUrl(
+            window.URL.createObjectURL(file)
+        ).toString(),
       };
+      console.log(fileHandle);
       this.array.push(fileHandle);
       this.product.productImages = this.array;
       console.log(this.product.productImages);
