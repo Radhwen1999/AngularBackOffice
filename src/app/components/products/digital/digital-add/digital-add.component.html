@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <h3>Image Preview</h3>
-                            <div *ngFor="let f of array">
+                            <div *ngFor="let f of product.productImages">
                                 <h4>{{f.filefile.name}}</h4>
                                 <img [src]="f.url">
                             </div>
