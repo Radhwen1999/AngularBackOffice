@@ -48,6 +48,11 @@
                                            required="">
                                 </div>
                             </div>
+                            <h3>Image Preview</h3>
+                            <div *ngFor="let f of array">
+                                <h4>{{f.filefile.name}}</h4>
+                                <img [src]="f.url">
+                            </div>
                             <label class="col-form-label pt-0"> Product Upload</label>
                             <div class="card-body dropzone-custom p-0">
                                 <ngx-dropzone class="dropzone-border" (change)="onSelect($event)">

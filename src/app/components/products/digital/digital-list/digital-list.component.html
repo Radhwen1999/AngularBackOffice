@@ -25,7 +25,9 @@
                                 <tr *ngFor="let catgory of digitalCategories">
                                 <th scope="row">{{ catgory.productName }}</th>
                                 <td>
-                                    <img [src]="catgory.productImages[0].filefile" (click)="showImages(catgory)" class="imgTable" style="width: 20px">
+                                    <div *ngFor="let image of catgory.productImages">
+                                    <img [src]="image.url"   style="width: 70px">
+                                    </div>
                                 </td>
                                     <td>{{ catgory.reference }}</td>
                                     <td>{{ catgory.productCategory }}</td>
