@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { vendorsDB } from '../../../shared/tables/vendor-list';
+import {Store} from '../../../models/store';
+import {TableService} from '../../../shared/service/table.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-vendors',
@@ -8,8 +11,9 @@ import { vendorsDB } from '../../../shared/tables/vendor-list';
 })
 export class ListVendorsComponent implements OnInit {
   public vendors = [];
+  stores: Store[] = [];
 
-  constructor() {
+  constructor(public service: TableService) {
     this.vendors = vendorsDB.data;
   }
 
