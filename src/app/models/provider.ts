@@ -1,4 +1,6 @@
 export class Provider {
-    providerName: string;
-    providerPrice: number;
+    id: number;
+    firstName: string;
+    lastName: string;
+    phoneNumber: number;
 }

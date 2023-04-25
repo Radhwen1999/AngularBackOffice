@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NavService } from '../../service/nav.service';
+import {AuthService} from "../../../services/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   @Output() rightSidebarEvent = new EventEmitter<boolean>();
 
-  constructor(public navServices: NavService) { }
+  constructor(public navServices: NavService, protected authenticationService: AuthService) { }
 
   collapseSidebar() {
     this.open = !this.open;
@@ -32,4 +33,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {  }
 
+    logout() {
+        this.authenticationService.logOut();
+    }
 }

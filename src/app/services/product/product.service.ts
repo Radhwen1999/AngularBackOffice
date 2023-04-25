@@ -11,6 +11,8 @@ export class ProductService {
   readonly GET_ALL_PRODUCTS_API_URL = 'http://localhost:8089/radhwen/api/product/getallproducts';
   readonly DELETE_PRODUCT_API_URL = 'http://localhost:8089/radhwen/api/product/deleteproduct/';
   readonly GET_PRODUCT_DETAILS__API_URL = 'http://localhost:8089/radhwen/api/product/getproductdetails/';
+
+
   constructor(private httpClient: HttpClient) { }
   addProduct(product: FormData): Observable<any> {
     // return this.httpClient.post<Product>(this.PRODUCT_API_URL, product);
