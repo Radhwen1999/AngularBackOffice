@@ -74,17 +74,11 @@ export class NavService {
 			]
 		},
 		{
-<<<<<<< Updated upstream
-			title: 'Pages', icon: 'clipboard', type: 'sub', active: false, children: [
-				{ path: '/pages/list-page', title: 'List Page', type: 'link' },
-				{ path: '/pages/create-page', title: 'Create Page', type: 'link' },
-=======
 			title: 'Deliveries', icon: 'clipboard', type: 'sub', active: false, children: [
 				{ path: '/pages/list-page', title: 'List delivery man', type: 'link' },
 				{ path: '/pages/create-page', title: 'Create delivery man', type: 'link' },
 				{ path: '/pages/provider-location', title: 'Provider Location', type: 'link' },
->>>>>>> Stashed changes
-			]
+]
 		},
 		{
 			title: 'Media', path: '/media', icon: 'camera', type: 'link', active: false
@@ -103,8 +97,8 @@ export class NavService {
 		},
 		{
 			title: 'Vendors', icon: 'users', type: 'sub', active: false, children: [
-				{ path: '/vendors/list-vendors', title: 'Vendor List', type: 'link' },
-				{ path: '/vendors/create-vendors', title: 'Create Vendor', type: 'link' },
+				{ path: '/vendors/list-vendors', title: 'Store List', type: 'link' },
+				{ path: '/vendors/create-vendors', title: 'Create Store', type: 'link' },
 			]
 		},
 		{
