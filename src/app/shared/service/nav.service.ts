@@ -75,9 +75,10 @@ export class NavService {
 		},
 		{
 			title: 'Deliveries', icon: 'clipboard', type: 'sub', active: false, children: [
-				{ path: '/pages/list-page', title: 'List Page', type: 'link' },
+				{ path: '/pages/list-page', title: 'List delivery man', type: 'link' },
 				{ path: '/pages/create-page', title: 'Create delivery man', type: 'link' },
-			]
+				{ path: '/pages/provider-location', title: 'Provider Location', type: 'link' },
+]
 		},
 		{
 			title: 'Media', path: '/media', icon: 'camera', type: 'link', active: false

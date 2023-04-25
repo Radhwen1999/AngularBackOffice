@@ -1,4 +1,10 @@
 
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <h5>Add Page</h5>
+
+
 <form #providerForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="container-fluid">
         <div class="row product-adding">
@@ -15,13 +21,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="validationCustomtitle" class="col-form-label pt-0"><span>*</span> Last Name</label>
-                                <input class="form-control" id="validationCustomtitle" name="ref" [(ngModel)]="provider.lastName" type="text" required="">
+                                <input class="form-control" id="validationCustomtitle" name="ref1" [(ngModel)]="provider.lastName" type="text" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="validationCustomtitle" class="col-form-label pt-0"><span>*</span> Phone Number</label>
+                                <input class="form-control" id="validationCustomtitle1" name="ref2" [(ngModel)]="provider.phoneNumber" type="text" required="">
                             </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
 
                             <div class="form-group mb-0">
                                 <div class="product-buttons text-end mt-3">
@@ -29,6 +42,5 @@
                                     <button type="button" class="btn btn-light">Discard</button>
                                 </div>
                             </div>
-                        </div>
-        </div>
+
 </form>

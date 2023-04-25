@@ -7,9 +7,12 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { ListPageComponent } from './list-page/list-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ProviderLocationComponent } from './provider-location/provider-location.component';
 
 @NgModule({
-  declarations: [ListPageComponent, CreatePageComponent],
+
+  declarations: [ListPageComponent, CreatePageComponent, ProviderLocationComponent],
+
     imports: [
         CommonModule,
         PagesRoutingModule,
@@ -18,5 +21,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
         SharedModule,
         FormsModule
     ]
+
 })
 export class PagesModule { }
