@@ -46,4 +46,8 @@ export class ListPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  setLatLngToProvider(id) {
+    this.providerService.setLatLngToProvider(id).subscribe();
+  }
+
 }
