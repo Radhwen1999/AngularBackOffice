@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Image } from '@ks89/angular-modal-gallery';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+import {Product} from "../../../../models/product";
+import {ActivatedRoute} from "@angular/router";
+import {ImageProcessingService} from "../../../../services/image-processing.service";
 
 @Component({
   selector: 'app-product-detail',
@@ -13,14 +16,18 @@ export class ProductDetailComponent implements OnInit {
   public closeResult: string;
   public counter: number = 1;
   currentRate = 8;
+  product: Product;
+  image: File[] = [];
 
   public imagesRect: Image[] = [
     new Image(0, { img: 'assets/images/pro3/2.jpg' }, { img: 'assets/images/pro3/1.jpg' }),
     new Image(1, { img: 'assets/images/pro3/27.jpg' }, { img: 'assets/images/pro3/27.jpg' }),
     new Image(2, { img: 'assets/images/pro3/1.jpg' }, { img: 'assets/images/pro3/1.jpg' }),
-    new Image(3, { img: 'assets/images/pro3/2.jpg' }, { img: 'assets/images/pro3/2.jpg' })]
+    new Image(3, { img: 'assets/images/pro3/2.jpg' }, { img: 'assets/images/pro3/2.jpg' })];
 
-  constructor(private modalService: NgbModal, config: NgbRatingConfig) {
+
+  constructor(private modalService: NgbModal, config: NgbRatingConfig, private activatedRoute: ActivatedRoute,
+              private imageProcessingImage: ImageProcessingService) {
     config.max = 5;
     config.readonly = false;
   }
@@ -51,6 +58,8 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.product = this.activatedRoute.snapshot.data.product;
+    console.log(this.product);
   }
 
 }

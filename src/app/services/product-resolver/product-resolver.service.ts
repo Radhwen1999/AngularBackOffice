@@ -20,11 +20,12 @@ export class ProductResolverService implements Resolve<Product>{
             map(p => this.imageProcessingService.createImages(p))
         );
    }else {
-      return of(this.getProductDetails());
+      return of(this.getProductDetail());
     }
   }
 
-  getProductDetails(){
+  getProductDetail(){
     return this.product;
   }
+
 }

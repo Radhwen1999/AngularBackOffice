@@ -24,6 +24,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SharedModule } from 'src/app/shared/shared.module';
+import {CarouselModule} from "ngx-bootstrap/carousel";
 // import { NgbdSortableHeader } from "src/app/shared/directives/NgbdSortableHeader";
 // import {  } from '../../directives/shorting.directive/';
 
@@ -31,18 +32,19 @@ import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
   declarations: [CategoryComponent, SubCategoryComponent, ProductListComponent, AddProductComponent, DigitalCategoryComponent, DigitalSubCategoryComponent, DigitalListComponent, DigitalAddComponent, ProductDetailComponent
   ],
-  imports: [
-    Ng2SearchPipeModule,
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ProductsRoutingModule,
-    NgbModule,
-    GalleryModule,
-    CKEditorModule,
-    NgxDropzoneModule,
-    SharedModule
-  ],
+    imports: [
+        Ng2SearchPipeModule,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ProductsRoutingModule,
+        NgbModule,
+        GalleryModule,
+        CKEditorModule,
+        NgxDropzoneModule,
+        SharedModule,
+        CarouselModule
+    ],
   exports: [SubCategoryComponent],
   bootstrap: [SubCategoryComponent],
   providers: [

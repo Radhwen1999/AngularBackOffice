@@ -23,7 +23,7 @@
                                 </thead>
                                 <tbody>
                                 <tr *ngFor="let catgory of digitalCategories">
-                                <th scope="row">{{ catgory.productName }}</th>
+                                <a (click)="showProductDetails(catgory.productId)" href="javascript:void(0)"><th scope="row">{{ catgory.productName }}</th></a>
                                 <td>
                                     <div *ngFor="let image of catgory.productImages">
                                     <img [src]="image.url"   style="width: 70px">

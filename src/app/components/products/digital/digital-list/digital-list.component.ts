@@ -83,8 +83,11 @@ export class DigitalListComponent implements OnInit {
       width: '800px'
     });
   }
-  public editProductDetails(productId) {
-      this.route.navigate(['/products/digital/digital-add-product', {productId}]);
+  public editProductDetails(productID) {
+      this.route.navigate(['/products/digital/digital-add-product', {productId: productID}]);
+  }
+  showProductDetails(productID) {
+    this.route.navigate(['/products/physical/product-detail', {productId: productID}]);
   }
   ngOnInit() {
     this.getAllProducts();
