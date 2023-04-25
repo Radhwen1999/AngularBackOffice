@@ -26,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ShowProductImagesDialogComponent } from './components/show-product-images-dialog/show-product-images-dialog.component';
-import {MatGridListModule} from "@angular/material/grid-list";
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [

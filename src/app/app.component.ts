@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {AuthService} from "./services/auth.service";
-import {User} from "./models/User";
+import {AuthService} from './services/auth.service';
+import {User} from './models/User';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +14,10 @@ export class AppComponent {
   constructor( private authService: AuthService) {
     this.authService.currentUser.subscribe(data => {
       this.currentUser = data;
-    })
+    });
   }
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
-    console.log("Hello");
+    //console.log("Hello");
   }
 }
