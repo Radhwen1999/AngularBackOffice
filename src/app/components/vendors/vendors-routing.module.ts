@@ -20,8 +20,8 @@ const routes: Routes = [
         path: 'create-vendors',
         component: CreateVendorsComponent,
         data: {
-          title: "Create Vendor",
-          breadcrumb: "Create Vendor"
+          title: "Create Store",
+          breadcrumb: 'Create Store'
         }
       }
     ]
