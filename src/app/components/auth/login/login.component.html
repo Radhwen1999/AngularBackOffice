@@ -222,9 +222,17 @@
                                                 <div *ngIf="password.errors?.['required']">Password is required</div>
                                                 <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters</div>
                                             </div>
-                                            <div class="form-button">
-                                            <a [routerLink]="'/dashboard/default'"> <button class="btn btn-primary" type="submit"> Login</button></a>
-<!--                                            <a > <button class="btn btn-primary" type="submit"> Login</button></a>-->
+
+											<div *ngIf="isLoginFailed" class="alert alert-danger" role="alert">
+												Login failed, please try again.
+											</div>
+
+											<div *ngIf="isLoggedIn" class="alert alert-success" role="alert">
+												Login successful! Redirecting to dashboard...
+											</div>
+											<div class="form-button">
+<!--                                            <a [routerLink]="'/dashboard/default'"> <button class="btn btn-primary" type="submit"> Login</button></a>-->
+                                            <a > <button class="btn btn-primary" type="submit"> Login</button></a>
                                             </div>
                                             <div class="form-footer">
                                                 <span>Or Login up with social platforms</span>
@@ -244,7 +252,7 @@
                                 <li [ngbNavItem]="2">
                                   <a ngbNavLink>Register</a>
                                   <ng-template ngbNavContent>
-                                    <form [formGroup]="registerForm" 
+                                    <form [formGroup]="registerForm"
                                     class="form-horizontal auth-form" novalidate>
                                     <div class="form-group">
                                         <input required="" name="login[username]" type="email"

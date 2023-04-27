@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
 import {User} from '../../../models/User';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
     password: null
   };
 
-  constructor(private formBuilder: UntypedFormBuilder, private authService: AuthService) {
+  constructor(private formBuilder: UntypedFormBuilder, private authService: AuthService, private router: Router) {
     this.createLoginForm();
     this.createRegisterForm();
     this.authService.currentUser.subscribe(data => {
@@ -78,29 +79,26 @@ export class LoginComponent implements OnInit {
     console.log('login page open');
   }
 
-  onSubmit(): void {
-    const { username, password } = this.form;
-    console.log('clicked login');
-    console.log(this.form.username);
-    this.authService.login(this.form.username, this.form.password).subscribe({
-      next: data => {
-        // tslint:disable-next-line:no-shadowed-variable
-        this.authService.currentUser.subscribe(data => {
-          this.currentUser = data;
-          console.log('login done');
-        });
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        /*this.reloadPage();*/
-      },
-      error: err => {
-        this.isLoginFailed = true;
-        console.log('err login');
-        console.log(err);
-      }
-    });
-  }
-  reloadPage(): void {
+	// tslint:disable-next-line:indent
+	onSubmit(): void {
+		// tslint:disable-next-line:indent
+		const { username, password } = this.form;
+		this.authService.login(this.form.username, this.form.password).subscribe({
+			next: data => {
+				this.authService.currentUser.subscribe(data => {
+					this.currentUser = data;
+				});
+				this.isLoginFailed = false;
+				this.isLoggedIn = true;
+				this.router.navigate(['/dashboard/default']); // navigate to dashboard on success
+			},
+			error: err => {
+				this.isLoginFailed = true;
+			}
+		});
+	}
+
+	reloadPage(): void {
     window.location.reload();
   }
 }
